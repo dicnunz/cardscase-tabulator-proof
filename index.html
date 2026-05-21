@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C.A.R.D.S. Pro Dashboard</title>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tabulator-tables/dist/css/tabulator_midnight.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar" aria-label="Dashboard summary">
+        <div>
+          <p class="eyebrow">C.A.R.D.S.</p>
+          <h1>Pro Dashboard</h1>
+        </div>
+        <div class="summary-strip">
+          <div class="summary-item">
+            <span class="summary-label">Inventory</span>
+            <strong id="totalCards">0</strong>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Portfolio</span>
+            <strong id="portfolioValue">$0</strong>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">PSA 10</span>
+            <strong id="psaCount">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Card inventory table">
+        <div class="toolbar">
+          <label class="searchbox" for="playerSearch">
+            <span>Search player</span>
+            <input id="playerSearch" type="search" autocomplete="off" placeholder="LeBron James" />
+          </label>
+
+          <label class="selectbox" for="gradeFilter">
+            <span>Grade</span>
+            <select id="gradeFilter">
+              <option value="">All</option>
+              <option value="PSA 10">PSA 10</option>
+              <option value="PSA 9">PSA 9</option>
+              <option value="BGS 9.5">BGS 9.5</option>
+              <option value="Raw">Raw</option>
+            </select>
+          </label>
+
+          <label class="selectbox" for="statusFilter">
+            <span>Status</span>
+            <select id="statusFilter">
+              <option value="">All</option>
+              <option value="Vaulted">Vaulted</option>
+              <option value="Listed">Listed</option>
+              <option value="Watch">Watch</option>
+              <option value="Incoming">Incoming</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="cardsTable" class="cards-table"></div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
